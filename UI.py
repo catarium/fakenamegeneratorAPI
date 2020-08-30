@@ -1,6 +1,5 @@
 from dataclasses import dataclass
-from pa_rser import Parser
-from pprint import pprint
+from parser_ import Parser
 
 
 @dataclass
@@ -40,6 +39,3 @@ def create_person(gender, name_lang, country):
     parser = Parser()
     data = parser.create_data(gender=gender, name_lang=name_lang, country=country)
     return Person(*data)
-
-
-pprint(create_person('random', 'us', 'us'))
