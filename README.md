@@ -2,7 +2,7 @@
 My version of fakenamegenerator API
 
 #   Usage
-    from fakenamegenerator_API import create_person
+    from generator import create_person
     person = create_person(<gender>, <name_set>, <country>) # returns dataclass
     print(person)
     print(person.name)
