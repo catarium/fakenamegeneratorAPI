@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from generator.parser_ import Parser
+from fakenamegeneratorAPI.parser_ import Parser
 
 
 @dataclass
