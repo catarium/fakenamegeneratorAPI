@@ -13,7 +13,7 @@ print(person)
 print(person.name)
 ```
 
-```
+
 #### genders:
  - male
  - female
@@ -88,4 +88,3 @@ print(person.name)
  - uk
  - us
  - uy
-```
