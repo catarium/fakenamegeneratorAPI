@@ -1,4 +1,4 @@
-# fakenamegenerator_API
+# fakenamegeneratorAPI
 My version of fakenamegenerator API
 
 #   Usage
