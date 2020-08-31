@@ -3,7 +3,7 @@ My version of fakenamegenerator API
 
 #   Usage
 ```
-pip install fakenamegeneratorAPI>
+pip install fakenamegeneratorAPI
 ```
 
 ```python
