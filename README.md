@@ -2,6 +2,8 @@
 My version of fakenamegenerator API
 
 #   Usage
+<pip install fakenamegeneratorAPI>
+ 
     from  fakenamegeneratorAPI import create_person
     person = create_person(<gender>, <name_set>, <country>) # returns dataclass
     print(person)
