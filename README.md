@@ -1,6 +1,6 @@
 # fakenamegeneratorAPI
-My version of fakenamegenerator API
-pypi page: https://pypi.org/project/fakenamegeneratorAPI/
+My version of fakenamegenerator API<br>
+PyPI page: https://pypi.org/project/fakenamegeneratorAPI/
 
 #   Usage
 ```
