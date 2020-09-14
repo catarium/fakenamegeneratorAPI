@@ -18,12 +18,110 @@ class Parser:
         data = soup.find('div', id='details').find('div', class_='content')
         address = data.find('div', class_='address')
         det = data.find_all('dd')
+        det2 = data.find_all('dt')
         det = [f'{det[i].text}' for i in range(len(det))][:-1]
+        det2 = [f'{det2[i].text}' for i in range(len(det2))][:-1]
         det.insert(0, address.h3.text)
         det.insert(1, address.div.text.strip())
-        det[3] = re.match(r'\d{3}-\d{2}-XXXX', det[3]).group(0)
-        det[10] = re.search(r'\w+@\w+.\w+', det[10]).group(0)
+        det_len = len(det)
+        print(len(det))
+        if "Mother's maiden name" not in det2:
+            det2.insert(0, 'None')
+            det.insert(2, 'None')
+        if det2[1] != 'Geo coordinates':
+            if 'You' in det[3]:
+                det[3] = re.match(r'.+You', det[3]).group(0)[:-3]
+        else:
+            det.insert(3, 'None')
+        if '@' in det[10]:
+            det[10] = re.search(r'\w+@\w+.\w+', det[10]).group(0)
+        else:
+            det.insert(10, 'None')
         det[20], det[21] = re.search(r'\(.+\)', det[20]).group(0)[1:-1], \
                            re.search(r'\(.+\)', det[21]).group(0)[1:-1]
         return det
 
+
+person = Parser()
+name_sets = [
+    'us',
+    'ar',
+    'au',
+    'br',
+    'celat',
+    'ch',
+    'zhtw',
+    'hr',
+    'cs',
+    'dk',
+    'nl',
+    'en',
+    'er',
+    'fi',
+    'fr',
+    'gr',
+    'gl',
+    'sp',
+    'hobbit',
+    'hu',
+    'is',
+    'ig',
+    'it',
+    'jpja',
+    'jp',
+    'tlh',
+    'ninja',
+    'no',
+    'fa',
+    'pl',
+    'ru',
+    'rucyr',
+    'gd',
+    'sl',
+    'sw',
+    'th',
+    'vn',
+]
+
+countryes = [
+    'au',
+    'as',
+    'bg',
+    'br',
+    'ca',
+    'cyen',
+    'cygk',
+    'cz',
+    'dk',
+    'ee',
+    'fi',
+    'fr',
+    'gr',
+    'gl',
+    'hu',
+    'is',
+    'it',
+    'nl',
+    'nz',
+    'no',
+    'pl',
+    'pt',
+    'sl',
+    'za',
+    'sp',
+    'sw',
+    'sz',
+    'tn',
+    'uk',
+    'us',
+    'uy',
+
+]
+
+
+# print(person.create_data('male', 'us', 'br'))
+print(person.create_data('male', 'zhtw', 'br'))
+for i in name_sets:
+    for j in countryes:
+        print(i, j)
+        print(len(person.create_data('male', i, j)))

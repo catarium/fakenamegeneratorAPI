@@ -7,7 +7,7 @@ with open("README.md", "r") as fh:
 setuptools.setup(
     name="fakenamegeneratorAPI",
     python_requires=">=3.7",
-    version="0.0.8",
+    version="0.0.9",
     packages=setuptools.find_packages(),
     url="https://github.com/catarium/fakenamegenerator_API",
     license="Apache-2.0 License",
