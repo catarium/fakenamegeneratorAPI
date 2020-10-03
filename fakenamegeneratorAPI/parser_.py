@@ -118,10 +118,3 @@ countryes = [
 
 ]
 
-
-# print(person.create_data('male', 'us', 'br'))
-print(person.create_data('male', 'zhtw', 'br'))
-for i in name_sets:
-    for j in countryes:
-        print(i, j)
-        print(len(person.create_data('male', i, j)))
